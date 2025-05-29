@@ -1,0 +1,59 @@
+find_package(SDL2 REQUIRED)
+find_package(OpenGL REQUIRED)
+
+add_executable(quake
+        sys_linux.c
+        cd_null.c
+        chase.c
+        cl_demo.c
+        cl_input.c
+        cl_main.c
+        cl_parse.c
+        cl_tent.c
+        cmd.c
+        common.c
+        console.c
+        crc.c
+        cvar.c
+        gl_draw.c
+        gl_mesh.c
+        gl_model.c
+        gl_refrag.c
+        gl_rlight.c
+        gl_rmain.c
+        gl_rmisc.c
+        gl_rsurf.c
+        gl_screen.c
+        gl_vidlinuxglx.c
+        gl_warp.c
+        host.c
+        host_cmd.c
+        keys.c
+        mathlib.c
+        menu.c
+        net_main.c
+        net_bsd.c
+        net_dgrm.c
+        net_vcr.c
+        net_loop.c
+        net_udp.c
+        pr_cmds.c
+        pr_edict.c
+        pr_exec.c
+        r_part.c
+        sbar.c
+        snd_dma.c
+        snd_mix.c
+        snd_linux.c
+        snd_mem.c
+        sv_main.c
+        sv_user.c
+        sv_move.c
+        sv_phys.c
+        view.c
+        wad.c
+        world.c
+        zone.c
+)
+
+target_link_libraries(quake Xxf86dga SDL2::SDL2 X11 Xxf86vm OpenGL::GL)
