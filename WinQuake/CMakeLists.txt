@@ -1,8 +1,8 @@
-find_package(SDL2 REQUIRED)
+find_package(SDL2 CONFIG REQUIRED)
 find_package(OpenGL REQUIRED)
 
 add_executable(quake
-        sys_linux.c
+        sys_sdl.c
         cd_null.c
         chase.c
         cl_demo.c
@@ -24,7 +24,7 @@ add_executable(quake
         gl_rmisc.c
         gl_rsurf.c
         gl_screen.c
-        gl_vidlinuxglx.c
+        vid_sdl.c
         gl_warp.c
         host.c
         host_cmd.c
@@ -44,7 +44,7 @@ add_executable(quake
         sbar.c
         snd_dma.c
         snd_mix.c
-        snd_linux.c
+        snd_sdl.c
         snd_mem.c
         sv_main.c
         sv_user.c
@@ -56,4 +56,4 @@ add_executable(quake
         zone.c
 )
 
-target_link_libraries(quake Xxf86dga SDL2::SDL2 X11 Xxf86vm OpenGL::GL)
+target_link_libraries(quake PRIVATE SDL2::SDL2 SDL2::SDL2main OpenGL::GL)
